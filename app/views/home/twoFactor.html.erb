@@ -1,0 +1,40 @@
+<h1>NUS IVLE Login System with 2FA</h1>
+<%= javascript_include_tag :ivle -%>
+<script>
+        var APIKey = "cfL8GNtVF9As36ZGVLvvG";
+        //var authUrl = "https://ivle.nus.edu.sg/api/login?apikey=" + apikey + "&url=" + callbackurl);
+        //window.location.href = authUrl;
+
+        // Code from http://pastie.org/3379491
+        var APIDomain = "https://ivle.nus.edu.sg/";
+        var APIUrl = APIDomain + "api/lapi.svc/";
+
+         var search = function() {
+            var p = window.location.search.substr(1).split(/\&/), l = p.length, kv, r = {};
+            while (l--) {
+                kv = p[l].split(/\=/);
+                r[kv[0]] = kv[1] || true;
+            }
+            return r;
+         } ();
+
+         var token = "";
+         if (search.token && search.token.length > 0 && search.token != 'undefined') {
+            token = search.token;
+         }
+    $(document).ready(function () {
+        if (token.length < 1) {
+            window.location = "http://localhost:3000";
+        }
+            //getUsername();
+    });
+    function getUsername() {
+            var url = APIUrl + "UserName_Get?output=json&callback=?&APIKey=" + APIKey + "&Token=" + Token;
+            $('#userName').append("<span>Request: " + url + "</span><br />");
+
+            jQuery.getJSON(url, function (data) {
+                $('#lbl_Name').html(data);
+                $('#dbg_UserInfo').append("<span>Response: " + data + "</span>");
+            });
+        }
+</script>

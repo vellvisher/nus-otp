@@ -1,2 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>NUS IVLE Login System with 2FA</h1>
+<script>
+        var apikey = "cfL8GNtVF9As36ZGVLvvG";
+
+        // Code from http://pastie.org/3379491
+        var APIDomain = "https://ivle.nus.edu.sg/";
+        var APIUrl = APIDomain + "api/lapi.svc/";
+        var twoFactorUrl = "http://localhost:3000/home/twoFactor";
+        var LoginURL = APIDomain + "api/login/?apikey="+apikey+"&url="+twoFactorUrl;
+
+    $(document).ready(function () {
+        $("#login").click(function() {
+                window.location = LoginURL;
+        });
+    });
+</script>
+<input type="button" value="Login via IVLE" id="login"/>
