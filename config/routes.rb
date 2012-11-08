@@ -3,6 +3,11 @@ NusOtp::Application.routes.draw do
 
   get "home/index"
   get "home/twoFactor"
+  post "home/twoFactor"
+  get "home/tokenLanding"
+  get "home/firstTime"
+  get "home/workspace"
+  get "home/gradebook"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

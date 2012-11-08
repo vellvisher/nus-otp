@@ -1,0 +1,20 @@
+<script>
+    $(document).ready(function() {
+        var userName = "<%= getUserName(@user) %>";
+        $("#userName").text(userName);
+        moduleData = JSON.parse('<%= getModules(@user).html_safe %>');
+        $(moduleData.Results).each(function(i){$("#modlist").append("<li>" +moduleData.Results[i].CourseCode+"</li>");});
+
+    $("#privButton").click(function() {
+        document.location = "http://localhost:3000/home/gradebook";
+    });
+
+    });
+</script>
+
+<h3>Welcome <a id="userName"/>!</h3>
+
+Here is the list of your courses:
+<ul id="modlist">
+</ul>
+<input id="privButton" type="button" value="Gradebook"/>
