@@ -27,7 +27,13 @@ class HomeController < ApplicationController
         end
         logger.debug("correct otp" + correctOTP)
         if params[:otp].to_s == correctOTP
-            render "/home/workspace"
+            if session[:privileged_url]
+                url = session[:privileged_url]
+                session[:privileged_url] = nil
+                render url
+            else
+                render "/home/workspace"
+            end
         end
     end
   end
@@ -43,6 +49,11 @@ class HomeController < ApplicationController
   end
 
   def gradebook
+    session['privileged_url'] = '/home/gradebook_privileged'
+    render "twoFactor"
+  end
+
+  def gradebook_privileged
 
   end
 end
