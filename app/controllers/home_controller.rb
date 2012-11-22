@@ -34,6 +34,8 @@ class HomeController < ApplicationController
             else
                 render "/home/workspace"
             end
+        else
+            @error = 'wrong-otp'
         end
     end
   end

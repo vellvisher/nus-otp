@@ -1,7 +1,13 @@
-The QR Code below has the secret key url for the
-Google Authenticator Service and should be scanned with
-the Google Authenticator App.
-<BR> <BR>
+<center>
+<div class='container'>
+<h1>2FA setup for first time user</h1>  
+    <div>
+        <%= image_tag('ga_icon.jpg', :size => "60x60");%>
+        <h2>Step 1: Download the Google Authenticator App from the AppStore(iPhone/Blackberry/Android)</h2>
+        <h2>Step 2: Scan the QRCode below</h2>
+    </div>
+<hr />
 <%= google_authenticator_qrcode(@user) %>
-<BR><BR>
-<a href="/home/twoFactor">Back</a>
+<br />
+<a href="/home/twoFactor">Continue to 2FA authentication</a>
+</div></center>

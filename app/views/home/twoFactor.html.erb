@@ -1,13 +1,21 @@
-<h1>NUS IVLE Login System with 2FA</h1>
+<center>
+<div class='container'>
+<h1>2FA Login Authentication</h1>  
 <%= csrf_meta_tag %>
-<script>
-    $(document).ready(function() {
-    });
-</script>
-Please enter the 6 digit pin on you mobile phone!
-
+<% if @error == 'wrong-otp' %>
+    <div class='red'>Wrong OTP entered</div>
+<% end %>
+<h2>Enter the 6 digit pin displayed in the google authenticator application on your mobile phone!</h2>
 <form action="/home/twoFactor" method="post">
     <input type="text" size="6" name="otp"/>
     <input name="authenticity_token" type="hidden" value=$('meta[name="csrf-token"]').attr('content') />
     <input type="submit" value="Submit"/>
 </form>
+<hr />
+iPhone Example:<br />
+<%= image_tag('ga_iphone.png');%>
+<br />
+Android Example:<br />
+<%= image_tag('ga_android.png');%>
+</div>
+</center>

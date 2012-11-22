@@ -1,1 +1,17 @@
-Privileged Gradebook area
+<script>
+  $(document).ready(function() {
+    $("#backButton").click(function() {
+            document.location = "http://localhost:3000/home/workspace";
+        });
+  });
+</script>
+<center>
+<div class='container'>
+<h1>Privileged Gradebook area</h1>
+<h2>This is your gradebook area</h2>
+It serve as a prototype to simulate 2FA authentication to privilege areas
+<br />
+<input id="backButton" type="button" value="Back to workspace"/>
+</div>  
+</center>
+

@@ -18,6 +18,11 @@ pre {
   font-size: 11px;
 }
 
+h2 {
+  line-height: 27px;
+  color: #4F4F4F;
+}
+
 a {
   color: #000;
   &:visited {
@@ -33,6 +38,16 @@ div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
+}
+
+.container {
+  display: block;
+  max-width:450px;
+  width:90%;
+}
+
+.red {
+  color:red;
 }
 
 #notice {
