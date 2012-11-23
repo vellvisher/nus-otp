@@ -5,7 +5,7 @@
         moduleData = JSON.parse('<%= getModules(@user).html_safe %>');
         $(moduleData.Results).each(
             function(i){
-                $("#modlist").append("<li>" +moduleData.Results[i].CourseCode+"</li>");
+                $("#modlist").append("<li>" +moduleData.Results[i].CourseCode+ " " +moduleData.Results[i].CourseName +"</li>");
             }
         );
 
@@ -19,8 +19,8 @@
 <div class='container'>
 <h1>IVLE</h1>
 <h2>Welcome <a id="userName"></a>!</h2>
-Here is the list of your courses:
-<ul id="modlist" style='width:200px;max-width: 200px;'></ul>
+Courses List:
+<ul id="modlist" style='width:300px;max-width: 300px;'></ul>
 <input id="privButton" type="button" value="Access your Gradebook"/>
 </div>
 </center>

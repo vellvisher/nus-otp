@@ -34,6 +34,10 @@ a {
   }
 }
 
+li {
+  display: inline-block;
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;
@@ -42,7 +46,7 @@ div {
 
 .container {
   display: block;
-  max-width:450px;
+  max-width:600px;
   width:90%;
 }
 
@@ -76,9 +80,5 @@ div {
     margin-bottom: 0px;
     background-color: #c00;
     color: #fff;
-  }
-  ul li {
-    font-size: 12px;
-    list-style: square;
   }
 }
