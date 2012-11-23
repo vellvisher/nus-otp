@@ -1,3 +1,10 @@
+<script>
+  $(document).ready(function() {
+    $("#continueButton").click(function() {
+            document.location = "http://localhost:3000/home/twoFactor";
+        });
+  });
+</script>
 <center>
 <div class='container'>
 <h1>2FA setup for first time user</h1>  
@@ -9,5 +16,5 @@
 <hr />
 <%= google_authenticator_qrcode(@user) %>
 <br />
-<a href="/home/twoFactor">Continue to 2FA authentication</a>
+<input id="continueButton" type="button" value="Continue to 2FA authentication"/>
 </div></center>
