@@ -1,7 +1,9 @@
 <script>
   $(document).ready(function() {
     $("#continueButton").click(function() {
-            document.location = "http://localhost:3000/home/twoFactor";
+            if(window.confirm("Are you sure you have scanned the bar code? This action is not reversible.")){
+              document.location = "http://localhost:3000/home/twoFactor";
+            }
         });
   });
 </script>
@@ -16,5 +18,5 @@
 <hr />
 <%= google_authenticator_qrcode(@user) %>
 <br />
-<input id="continueButton" type="button" value="Continue to 2FA authentication"/>
+<input id="continueButton" type="button" value="I have already scanned the barcode."/>
 </div></center>
